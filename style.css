@@ -1,0 +1,213 @@
+/* Import TAN Harmoni font */
+@font-face {
+  font-family: 'TAN Harmoni';
+  src: url('fonts/TAN-Harmoni.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFFFFF; /* blanco puro */
+  color: #1C1C1C; /* negro elegante */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Aplicar TAN Harmoni a títulos */
+h1, h2, h3, header, footer {
+  font-family: 'TAN Harmoni', serif;
+}
+
+/* Sticky Header with Shadow */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #B22222; /* rojo profundo */
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky Footer with Shadow */
+footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #B22222;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation links */
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+nav a[href*="formulario"] {
+  background-color: #4B6F44; /* verde natural */
+  color: #FFFFFF;
+}
+
+nav a[href*="tabla"] {
+  background-color: #D3D3D3; /* gris claro */
+  color: #1C1C1C;
+}
+
+nav a[href*="linea"] {
+  background-color: #B22222; /* rojo profundo */
+  color: #FFFFFF;
+}
+
+nav a[href*="audio"],
+nav a[href*="video"] {
+  background-color: #1C1C1C; /* negro elegante */
+  color: #FFFFFF;
+}
+
+nav a:hover {
+  opacity: 0.85;
+}
+
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 40px;
+}
+
+/* Responsive images */
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table box styling */
+#tabla {
+  background-color: #D3D3D3; /* gris claro */
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #B22222;
+}
+
+#tabla h2 {
+  margin-bottom: 15px;
+  color: #B22222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+thead {
+  background-color: #B22222;
+  color: #FFFFFF;
+}
+
+/* Form box styling */
+#formulario {
+  background-color: #4B6F44; /* verde natural */
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #B22222;
+}
+
+#formulario h2 {
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+form .form-label {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #B22222;
+  outline: none;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* Submit button */
+button.btn-success {
+  background-color: #B22222;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.btn-success:hover {
+  background-color: #8B1A1A;
+}
+
+/* Audio and video spacing */
+audio, video {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Utility spacing */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
