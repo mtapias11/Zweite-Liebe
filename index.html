@@ -4,13 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zweite Liebe</title>
-  <!-- Bootstrap CSS CDN -->
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fuente TAN Harmoni -->
   <style>
+    @font-face {
+      font-family: 'TAN Harmoni';
+      src: url('fonts/TAN-Harmoni.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h1, h2 {
+      font-family: 'TAN Harmoni', serif;
+      font-style: italic;
+      color: #000000; /* rojo profundo */
+    }
+
+    body {
+      background-color: #FFFFFF; /* blanco */
+      color: #1C1C1C; /* negro elegante */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+
     a {
       text-decoration: none;
-      color: rgba(2, 19, 22, 0.973);
+      color: #1C1C1C;
       padding: 8px 12px;
       border-radius: 4px;
       transition: background-color 0.3s ease;
@@ -21,122 +43,111 @@
     }
 
     a:hover {
-      background-color: #d2d8e031;
-      color: #ffffff;
+      background-color: #5a5f669c; /* verde natural */
+      color: #FFFFFF;
     }
 
     a.active {
-      background-color: #7a0101;
+      background-color: #B22222;
       font-weight: bold;
+      color: #FFFFFF;
     }
 
-    body {
-      background-color: #373b3b9a;
+    header, footer {
+      background-color: #B22222;
+      color: #FFFFFF;
       padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .container {
+      background-color: #F9F9F9;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    img.img-fluid {
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
 
-  <header style="background-color: #7a0101; color: rgb(255, 255, 255);" class="text-center p-4">
+  <header>
     <h1>Zweite Liebe</h1>
-    <p>Zweite Liebe, una segunda vida para la moda de lujo.</p>
+    <p>Una segunda vida para la moda de lujo.</p>
     <nav>
-      <a href="#formulario" class="text-white">Contactanos</a>
-      <a href="#marcas" class="text-white">Marcas</a>
-      <a href="#tabla" class="text-white">New</a>
+      <a href="#formulario" class="active">Contáctanos</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#video">Video</a>
     </nav>
   </header>
 
   <main class="container my-5">
     <section>
       <h2 class="text-center">¿Quiénes somos?</h2>
-      <p><p class="text-center">Somos un emprendimiento dedicado a darle una segunda vida a prendas en buen estado, promoviendo el consumo responsable y la moda circular. En Zweite Liebe, creemos que cada prenda tiene una historia que merece continuar. Por eso, damos una segunda oportunidad a vestidos de alta costura, seleccionados cuidadosamente por su calidad, diseño y elegancia. Nuestro objetivo es que estas piezas únicas vuelvan a brillar en nuevos cuerpos y momentos especiales.
-Formamos parte de la moda sostenible, promoviendo el consumo consciente, la reutilización y el respeto por el medio ambiente. Cada vestido que ofrecemos no solo representa estilo, sino también un compromiso con el planeta.</p>
-</p>
+      <p class="text-center">
+        Somos un emprendimiento dedicado a darle una segunda vida a prendas en buen estado, promoviendo el consumo responsable y la moda circular. En Zweite Liebe, creemos que cada prenda tiene una historia que merece continuar.
+      </p>
     </section>
 
     <section id="marcas" class="my-5">
       <h2 class="text-center">Segunda mano con autenticación</h2>
-      <img src="images/marcas.png"Ofrecemos prendas de Chanel, Dior, Gucci, Louis Vuitton, Prada entre otras. Somos una plataforma de lujo pre-loved." class="img-fluid mb-3">
-      <p>
-   </section>
+      <img src="images/marcas.png" alt="Marcas de lujo" class="img-fluid">
+      <p class="text-center">Chanel, Dior, Gucci, Louis Vuitton, Prada entre otras. Somos una plataforma de lujo pre-loved.</p>
+    </section>
 
     <section>
       <h2 class="text-center">¿Por qué elegir Zweite Liebe?</h2>
-      <p>En Zweite Liebe creemos que cada vestido tiene una historia que merece ser contada una vez más. Rescatamos piezas de alta costura y les damos una segunda vida, fusionando elegancia atemporal con conciencia ambiental. Nuestro compromiso no es solo con la moda, sino con el planeta.</p>
+      <p>
+        En Zweite Liebe creemos que cada vestido tiene una historia que merece ser contada una vez más. Rescatamos piezas de alta costura y les damos una segunda vida, fusionando elegancia atemporal con conciencia ambiental.
       <a href="https://www.pactomundial.org/noticia/moda-sostenible/" target="_blank">Visita Pacto Mundial para saber más sobre moda sostenible.</a>
+    </section>
     </section>
 
     <section id="video" class="my-5">
-      <h2 class="text-center">Moda que transforma: piezas únicas, historias reales</h2>
       <video controls class="w-100">
         <source src="videos/quienes_somos.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
       </video>
     </section>
-
-    <table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif;">
-  <thead style="background-color:#72756ff8;">
-    <tr>
-      <th style="padding:12px; border:1px solid #ddd;">🌿 Moda sostenible con alma</th>
-      <th style="padding:12px; border:1px solid #ddd;">✨ Exclusividad que trasciende tendencias</th>
-      <th style="padding:12px; border:1px solid #ddd;">🖤 Minimalismo lujoso</th>
-      <th style="padding:12px; border:1px solid #ddd;">🤝 Elegirnos es elegir consciencia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:12px; border:1px solid #ddd;">
-        Cada prenda ha sido cuidadosamente seleccionada, restaurada y reinventada para que puedas lucir única sin comprometer tus valores.
-      </td>
-      <td style="padding:12px; border:1px solid #ddd;">
-        Aquí no encontrarás producciones masivas, sino piezas únicas que celebran tu estilo personal y la belleza de lo auténtico.
-      </td>
-      <td style="padding:12px; border:1px solid #ddd;">
-        Nuestra estética combina líneas limpias, colores neutros y detalles sofisticados que elevan tu presencia sin esfuerzo.
-      </td>
-      <td style="padding:12px; border:1px solid #ddd;">
-        Al comprar en Zweite Liebe, apoyas un modelo de consumo responsable, reduces el impacto ambiental y te unes a una comunidad que cree en el poder de la transformación.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+    </section>
 
     <section id="formulario" class="my-5">
-  <h2 class="text-center mb-4">Hablemos de moda con propósito</h2>
-  <form class="row g-3 needs-validation" novalidate>
-    <div class="col-md-6">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" required autofocus>
-      <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
-    </div>
-    <div class="col-md-6">
-      <label for="email" class="form-label">Correo Electrónico</label>
-      <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
-      <div class="invalid-feedback">Correo inválido.</div>
-    </div>
-    <div class="col-md-6">
-      <label for="fecha" class="form-label">Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="fecha" name="fecha" required>
-      <div class="invalid-feedback">Selecciona una fecha válida.</div>
-    </div>
-    <div class="col-md-6">
-      <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
-      <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
-    </div>
-    <div class="col-12 text-center">
-      <button class="btn btn-success px-5" type="submit">Enviar</button>
-    </div>
-  </form>
-</section>
+      <h2 class="text-center mb-4">Hablemos de moda con propósito</h2>
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
+          <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div class="invalid-feedback">Correo inválido.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="fecha" class="form-label">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="fecha" name="fecha" required>
+          <div class="invalid-feedback">Selecciona una fecha válida.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+          <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn btn-success px-5" type="submit">Enviar</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-  <footer style="background-color: #7a0101; color: white;" class="text-center p-3">
-    <p>© 2025 Mi Página Web Guía 1. Este sitio fue creado con fines educativos, las imágenes y videos son referenciales.</p>
-  </footer>
-  <!-- Bootstrap JS Bundle CDN (includes Popper) -->
+  <footer>
+    <p>© 2025 Zweite Liebe. Este sitio fue creado con fines educativos. Las imágenes y videos son referenciales.</p>
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (() => {
@@ -153,6 +164,7 @@ Formamos parte de la moda sostenible, promoviendo el consumo consciente, la reut
       });
     })();
   </script>
-
+</body>
+</html>
 </body>
 </html>
