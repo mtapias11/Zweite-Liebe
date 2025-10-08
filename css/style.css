@@ -1,6 +1,6 @@
-/* ==============================
-   Fuente personalizada
-============================== */
+/* ===================================
+   Custom Font
+=================================== */
 @font-face {
   font-family: 'TAN Harmoni';
   src: url('fonts/TAN-Harmoni.ttf') format('truetype');
@@ -8,28 +8,30 @@
   font-style: normal;
 }
 
-/* ==============================
-   Paleta de colores elegantes
-   ==============================
-   --vino: #6C1E1E
+/* ===================================
+   Elegant Color Palette
+   -----------------------------------
+   --wine: #6C1E1E
    --beige: #F5F3EF
-   --dorado: #C8A97E
-   --verde-oliva: #4B6F44
-   --negro-suave: #1C1C1C
-   --blanco: #FFFFFF
-============================== */
+   --gold: #C8A97E
+   --gold-rose: #C48C66
+   --olive-green: #4B6F44
+   --soft-black: #1C1C1C
+   --white: #FFFFFF
+=================================== */
 :root {
-  --vino: #6C1E1E;
+  --wine: #6C1E1E;
   --beige: #F5F3EF;
-  --dorado: #C8A97E;
-  --verde-oliva: #4B6F44;
-  --negro-suave: #1C1C1C;
-  --blanco: #FFFFFF;
+  --gold: #C8A97E;
+  --gold-rose: #C48C66;
+  --olive-green: #4B6F44;
+  --soft-black: #1C1C1C;
+  --white: #FFFFFF;
 }
 
-/* ==============================
-   Reset y estilos base
-============================== */
+/* ===================================
+   Reset & Base Styles
+=================================== */
 * {
   margin: 0;
   padding: 0;
@@ -39,47 +41,69 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--beige);
-  color: var(--negro-suave);
+  color: var(--soft-black);
   line-height: 1.6;
 }
 
-/* ==============================
-   Tipografía
-============================== */
+/* ===================================
+   Typography & Headings
+=================================== */
 h1, h2, h3, header, footer {
   font-family: 'TAN Harmoni', serif;
   font-style: italic;
-  color: var(--vino);
+  color: var(--wine);
 }
 
-/* ==============================
-   Header y Footer
-============================== */
+/* Main Title */
+h1 {
+  font-size: 3.5rem; /* Large and elegant */
+  color: var(--gold-rose); /* Soft rose-gold tone */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Subheadings */
+h2 {
+  font-size: 2rem;
+  color: var(--wine);
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+/* ===================================
+   Header & Footer
+=================================== */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--vino);
-  color: var(--blanco);
+  background-color: var(--wine);
+  color: var(--white);
   text-align: center;
-  padding: 20px;
-  border-radius: 0 0 10px 10px;
+  padding: 30px 20px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 footer {
-  background-color: var(--vino);
-  color: var(--blanco);
+  background-color: var(--wine);
+  color: var(--white);
   text-align: center;
   padding: 15px 20px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 12px 12px 0 0;
   box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
   font-size: 0.9rem;
 }
 
-/* ==============================
-   Navegación
-============================== */
+/* ===================================
+   Navigation
+=================================== */
 nav a {
   margin: 0 8px;
   text-decoration: none;
@@ -87,31 +111,31 @@ nav a {
   padding: 6px 14px;
   border-radius: 6px;
   display: inline-block;
-  color: var(--blanco);
+  color: var(--white);
   transition: all 0.3s ease;
 }
 
 nav a.active,
 nav a:hover {
-  background-color: var(--dorado);
-  color: var(--vino);
+  background-color: var(--gold);
+  color: var(--wine);
 }
 
-/* ==============================
-   Contenedor principal
-============================== */
+/* ===================================
+   Main Container
+=================================== */
 .container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
-  background-color: var(--blanco);
+  background-color: var(--white);
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ==============================
-   Secciones e imágenes
-============================== */
+/* ===================================
+   Sections & Images
+=================================== */
 section {
   margin-bottom: 60px;
 }
@@ -123,26 +147,26 @@ img.img-fluid {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ==============================
-   Formularios
-============================== */
+/* ===================================
+   Form Section
+=================================== */
 #formulario {
-  background-color: var(--vino);
+  background-color: var(--wine);
   padding: 30px;
   border-radius: 12px;
-  border: 2px solid var(--dorado);
-  color: var(--blanco);
+  border: 2px solid var(--gold);
+  color: var(--white);
 }
 
 #formulario h2 {
   margin-bottom: 20px;
-  color: var(--dorado);
+  color: var(--gold);
   text-align: center;
 }
 
 form .form-label {
   font-weight: bold;
-  color: var(--blanco);
+  color: var(--white);
 }
 
 input[type="text"],
@@ -160,7 +184,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: var(--dorado);
+  border-color: var(--gold);
   outline: none;
   box-shadow: 0 0 5px rgba(200, 169, 126, 0.4);
 }
@@ -170,12 +194,12 @@ textarea:focus {
   font-size: 0.9em;
 }
 
-/* ==============================
-   Botón principal
-============================== */
+/* ===================================
+   Buttons
+=================================== */
 button.btn-success {
-  background-color: var(--dorado);
-  color: var(--vino);
+  background-color: var(--gold);
+  color: var(--wine);
   padding: 12px 30px;
   border: none;
   border-radius: 6px;
@@ -184,13 +208,13 @@ button.btn-success {
 }
 
 button.btn-success:hover {
-  background-color: var(--verde-oliva);
-  color: var(--blanco);
+  background-color: var(--olive-green);
+  color: var(--white);
 }
 
-/* ==============================
-   Multimedia
-============================== */
+/* ===================================
+   Media Elements
+=================================== */
 video, audio {
   width: 100%;
   border-radius: 10px;
@@ -198,9 +222,9 @@ video, audio {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ==============================
-   Utilidades
-============================== */
+/* ===================================
+   Utilities
+=================================== */
 .text-center {
   text-align: center;
 }
