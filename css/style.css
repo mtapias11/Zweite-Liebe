@@ -1,235 +1,231 @@
-/* ===================================
-   Custom Font
-=================================== */
-@font-face {
-  font-family: 'TAN Harmoni';
-  src: url('fonts/TAN-Harmoni.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* ===================================
-   Elegant Color Palette
-   -----------------------------------
-   --wine: #6C1E1E
-   --beige: #F5F3EF
-   --gold: #C8A97E
-   --gold-rose: #C48C66
-   --olive-green: #4B6F44
-   --soft-black: #1C1C1C
-   --white: #FFFFFF
-=================================== */
-:root {
-  --wine: #6C1E1E;
-  --beige: #F5F3EF;
-  --gold: #C8A97E;
-  --gold-rose: #C48C66;
-  --olive-green: #4B6F44;
-  --soft-black: #1C1C1C;
-  --white: #FFFFFF;
-}
-
-/* ===================================
-   Reset & Base Styles
-=================================== */
-* {
+/* =========================================
+   Editorial Typography & Base Styles
+========================================= */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #db0000c5;
+  color: #1a1a1a;
+  line-height: 1.8;
+  font-size: 18px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--beige);
-  color: var(--soft-black);
-  line-height: 1.6;
-}
-
-/* ===================================
-   Typography & Headings
-=================================== */
-h1, h2, h3, header, footer {
-  font-family: 'TAN Harmoni', serif;
-  font-style: italic;
-  color: var(--wine);
-}
-
-/* Main Title */
-h1 {
-  font-size: 3.5rem; /* Large and elegant */
-  color: var(--gold-rose); /* Soft rose-gold tone */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Subheadings */
-h2 {
-  font-size: 2rem;
-  color: var(--wine);
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: 1.5rem;
-  color: var(--gold);
-}
-
-/* ===================================
-   Header & Footer
-=================================== */
+/* =========================================
+   Elegant Header
+========================================= */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--wine);
-  color: var(--white);
+  background-color: #000000;
+  color: #360505;
+  padding: 50px 20px;
   text-align: center;
-  padding: 30px 20px;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-  background-color: var(--wine);
-  color: var(--white);
-  text-align: center;
-  padding: 15px 20px;
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
-  font-size: 0.9rem;
+/* =========================================
+   Minimal Navigation
+========================================= */
+nav {
+  margin-top: 15px;
 }
 
-/* ===================================
-   Navigation
-=================================== */
 nav a {
-  margin: 0 8px;
+  color: #750101;
   text-decoration: none;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 6px;
-  display: inline-block;
-  color: var(--white);
-  transition: all 0.3s ease;
+  margin: 0 18px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
-nav a.active,
 nav a:hover {
-  background-color: var(--gold);
-  color: var(--wine);
+  color: #B22222;
+  border-bottom: 2px solid #B22222;
 }
 
-/* ===================================
+/* =========================================
    Main Container
-=================================== */
+========================================= */
 .container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-/* ===================================
-   Sections & Images
-=================================== */
-section {
-  margin-bottom: 60px;
+/* =========================================
+   Section Titles
+========================================= */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #000000; /* Black for elegance */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
 }
 
-img.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ===================================
-   Form Section
-=================================== */
-#formulario {
-  background-color: var(--wine);
-  padding: 30px;
-  border-radius: 12px;
-  border: 2px solid var(--gold);
-  color: var(--white);
-}
-
-#formulario h2 {
-  margin-bottom: 20px;
-  color: var(--gold);
+/* Large main title */
+h1 {
+  font-size: 2.6rem;
   text-align: center;
+  margin-bottom: 35px;
+}
+
+/* Medium section titles */
+h2 {
+  font-size: 1.9rem;
+  position: relative;
+}
+
+/* Small subtitles */
+h3 {
+  font-size: 1.4rem;
+  margin-top: 25px;
+}
+
+/* Optional underline accent for h2 */
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #B22222;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* =========================================
+   Paragraphs
+========================================= */
+p {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* =========================================
+   Featured Images
+========================================= */
+img.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img.img-fluid:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   Video Elements
+========================================= */
+video {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   Form Styling
+========================================= */
+form {
+  background-color: #867a4269;
+  padding: 35px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 form .form-label {
   font-weight: bold;
-  color: var(--white);
+  margin-bottom: 8px;
+  display: block;
+  color: #333333;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
+input,
 textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  background-color: var(--beige);
-  transition: border-color 0.3s ease;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
-  border-color: var(--gold);
+  border-color: #B22222;
   outline: none;
-  box-shadow: 0 0 5px rgba(200, 169, 126, 0.4);
+  box-shadow: 0 0 5px rgba(178, 34, 34, 0.3);
 }
 
-.invalid-feedback {
-  color: #ffb3b3;
-  font-size: 0.9em;
-}
-
-/* ===================================
-   Buttons
-=================================== */
+/* =========================================
+   Submit Button
+========================================= */
 button.btn-success {
-  background-color: var(--gold);
-  color: var(--wine);
-  padding: 12px 30px;
+  background-color: #f8eeee00;
+  color: #5f30307e;
+  padding: 12px 28px;
   border: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button.btn-success:hover {
-  background-color: var(--olive-green);
-  color: var(--white);
+  background-color: #8B1A1A;
+  transform: scale(1.03);
 }
 
-/* ===================================
-   Media Elements
-=================================== */
-video, audio {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ===================================
-   Utilities
-=================================== */
-.text-center {
+/* =========================================
+   Editorial Footer
+========================================= */
+footer {
+  background-color: #000000;
+  color: #ffffff;
   text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-top: 3px solid #B22222;
 }
 
-.my-5 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+/* =========================================
+   Responsive Adjustments
+========================================= */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.8rem;
+    padding: 30px 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
 }
