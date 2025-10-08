@@ -1,6 +1,13 @@
 /* =========================================
    Editorial Typography & Base Styles
 ========================================= */
+@font-face {
+  font-family: 'TAN Harmoni';
+  src: url('fonts/TAN-Harmoni.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Georgia', serif;
   background-color: #db0000c5;
@@ -61,19 +68,22 @@ nav a:hover {
 /* =========================================
    Section Titles
 ========================================= */
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  color: #000000; /* Black for elegance */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  margin-bottom: 25px;
-}
-
-/* Large main title */
 h1 {
+  font-family: 'TAN Harmoni', serif;
+  font-style: italic;
   font-size: 2.6rem;
   text-align: center;
   margin-bottom: 35px;
+  color: #000000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+h2, h3 {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #000000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
 }
 
 /* Medium section titles */
@@ -196,7 +206,7 @@ button.btn-success:hover {
 ========================================= */
 footer {
   background-color: #000000;
-  color: #ffffff;
+  color: #7c1919;
   text-align: center;
   padding: 40px 20px;
   font-size: 0.9rem;
