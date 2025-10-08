@@ -4,54 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zweite Liebe</title>
-  <link rel=“stylesheet” href=“./css/style.css”>
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
 
-  <header>
+  <header class="text-center p-4 bg-light">
     <h1>Zweite Liebe</h1>
     <p>Una segunda vida para la moda de lujo.</p>
     <nav>
-      <a href="#formulario" class="active">Contáctanos</a>
-      <a href="#marcas">Marcas</a>
-      <a href="#video">Video</a>
+      <a href="#formulario" class="mx-2 active">Contáctanos</a>
+      <a href="#marcas" class="mx-2">Marcas</a>
+      <a href="#video" class="mx-2">Video</a>
     </nav>
   </header>
 
   <main class="container my-5">
+
+    <!-- Sección Quiénes somos -->
     <section>
       <h2 class="text-center">¿Quiénes somos?</h2>
       <p class="text-center">
-        Somos un emprendimiento dedicado a darle una segunda vida a prendas en buen estado, promoviendo el consumo responsable y la moda circular. En Zweite Liebe, creemos que cada prenda tiene una historia que merece continuar.
+        Somos un emprendimiento dedicado a darle una segunda vida a prendas en buen estado, promoviendo el consumo responsable y la moda circular. En <strong>Zweite Liebe</strong>, creemos que cada prenda tiene una historia que merece continuar.
       </p>
     </section>
 
-    <section id="marcas" class="my-5">
-      <h2 class="text-center">Segunda mano con autenticación</h2>
-      <img src="images/marcas.png" alt="Marcas de lujo" class="img-fluid">
-      <p class="text-center">Chanel, Dior, Gucci, Louis Vuitton, Prada entre otras. Somos una plataforma de lujo pre-loved.</p>
+    <!-- Sección Marcas -->
+    <section id="marcas" class="my-5 text-center">
+      <h2>Segunda mano con autenticación</h2>
+      <img src="images/marcas.png" alt="Marcas de lujo" class="img-fluid my-3">
+      <p>Chanel, Dior, Gucci, Louis Vuitton, Prada, entre otras. Somos una plataforma de lujo pre-loved.</p>
     </section>
 
-    <section>
+    <!-- Sección Por qué elegir -->
+    <section class="my-5">
       <h2 class="text-center">¿Por qué elegir Zweite Liebe?</h2>
       <p>
         En Zweite Liebe creemos que cada vestido tiene una historia que merece ser contada una vez más. Rescatamos piezas de alta costura y les damos una segunda vida, fusionando elegancia atemporal con conciencia ambiental.
-      <a href="https://www.pactomundial.org/noticia/moda-sostenible/" target="_blank">Visita Pacto Mundial para saber más sobre moda sostenible.</a>
-    </section>
+      </p>
+      <p>
+        <a href="https://www.pactomundial.org/noticia/moda-sostenible/" target="_blank">
+          Visita Pacto Mundial para saber más sobre moda sostenible.
+        </a>
+      </p>
     </section>
 
-    <section id="video" class="my-5">
-      <video controls class="w-100">
+    <!-- Sección Video -->
+    <section id="video" class="my-5 text-center">
+      <h2>Conoce más sobre nosotros</h2>
+      <video controls class="w-100 mt-3">
         <source src="videos/quienes_somos.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
       </video>
     </section>
-    </section>
 
+    <!-- Sección Formulario -->
     <section id="formulario" class="my-5">
       <h2 class="text-center mb-4">Hablemos de moda con propósito</h2>
       <form class="row g-3 needs-validation" novalidate>
@@ -80,12 +91,17 @@
         </div>
       </form>
     </section>
+
   </main>
 
-  <footer>
+  <footer class="text-center py-3 bg-light">
     <p>© 2025 Zweite Liebe. Este sitio fue creado con fines educativos. Las imágenes y videos son referenciales.</p>
+  </footer>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Validación de formulario -->
   <script>
     (() => {
       'use strict';
@@ -101,7 +117,6 @@
       });
     })();
   </script>
-</body>
-</html>
+
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* Importar la fuente TAN Harmoni */
+/* ==============================
+   Fuente personalizada
+============================== */
 @font-face {
   font-family: 'TAN Harmoni';
   src: url('fonts/TAN-Harmoni.ttf') format('truetype');
@@ -6,7 +8,28 @@
   font-style: normal;
 }
 
-/* Reset y estilos base */
+/* ==============================
+   Paleta de colores elegantes
+   ==============================
+   --vino: #6C1E1E
+   --beige: #F5F3EF
+   --dorado: #C8A97E
+   --verde-oliva: #4B6F44
+   --negro-suave: #1C1C1C
+   --blanco: #FFFFFF
+============================== */
+:root {
+  --vino: #6C1E1E;
+  --beige: #F5F3EF;
+  --dorado: #C8A97E;
+  --verde-oliva: #4B6F44;
+  --negro-suave: #1C1C1C;
+  --blanco: #FFFFFF;
+}
+
+/* ==============================
+   Reset y estilos base
+============================== */
 * {
   margin: 0;
   padding: 0;
@@ -15,148 +38,111 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #FFFFFF;
-  color: #1C1C1C;
+  background-color: var(--beige);
+  color: var(--negro-suave);
   line-height: 1.6;
-  padding: 20px;
 }
 
-/* Títulos con TAN Harmoni */
+/* ==============================
+   Tipografía
+============================== */
 h1, h2, h3, header, footer {
   font-family: 'TAN Harmoni', serif;
   font-style: italic;
-  color: #000000;
+  color: var(--vino);
 }
 
-/* Header y Footer sticky con sombra */
+/* ==============================
+   Header y Footer
+============================== */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #B22222;
-  color: #FFFFFF;
+  background-color: var(--vino);
+  color: var(--blanco);
   text-align: center;
   padding: 20px;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 footer {
-  position: sticky;
-  bottom: 0;
-  z-index: 1000;
-  background-color: #B22222;
-  color: #FFFFFF;
+  background-color: var(--vino);
+  color: var(--blanco);
   text-align: center;
-  padding: 20px;
+  padding: 15px 20px;
   border-radius: 10px 10px 0 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
 }
 
-/* Enlaces de navegación */
+/* ==============================
+   Navegación
+============================== */
 nav a {
-  margin-right: 10px;
+  margin: 0 8px;
   text-decoration: none;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
   display: inline-block;
-  transition: background-color 0.3s ease;
+  color: var(--blanco);
+  transition: all 0.3s ease;
 }
 
-nav a[href*="formulario"] {
-  background-color: #4B6F44;
-  color: #FFFFFF;
-}
-
-nav a[href*="tabla"] {
-  background-color: #D3D3D3;
-  color: #1C1C1C;
-}
-
-nav a[href*="linea"] {
-  background-color: #B22222;
-  color: #FFFFFF;
-}
-
-nav a[href*="audio"],
-nav a[href*="video"] {
-  background-color: #1C1C1C;
-  color: #FFFFFF;
-}
-
+nav a.active,
 nav a:hover {
-  opacity: 0.85;
+  background-color: var(--dorado);
+  color: var(--vino);
 }
 
-/* Contenedor principal */
+/* ==============================
+   Contenedor principal
+============================== */
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 40px auto;
   padding: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10px;
+  background-color: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Espaciado entre secciones */
+/* ==============================
+   Secciones e imágenes
+============================== */
 section {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
-/* Imágenes responsivas */
 img.img-fluid {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para la tabla */
-#tabla {
-  background-color: #D3D3D3;
-  padding: 20px;
   border-radius: 10px;
-  border: 2px solid #B22222;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#tabla h2 {
-  margin-bottom: 15px;
-  color: #B22222;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-thead {
-  background-color: #B22222;
-  color: #FFFFFF;
-}
-
-/* Estilos para el formulario */
+/* ==============================
+   Formularios
+============================== */
 #formulario {
-  background-color: #7a0101;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #B22222;
+  background-color: var(--vino);
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid var(--dorado);
+  color: var(--blanco);
 }
 
 #formulario h2 {
-  margin-bottom: 15px;
-  color: #FFFFFF;
+  margin-bottom: 20px;
+  color: var(--dorado);
+  text-align: center;
 }
 
 form .form-label {
   font-weight: bold;
-  color: #FFFFFF;
+  color: var(--blanco);
 }
 
 input[type="text"],
@@ -166,48 +152,57 @@ textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: var(--beige);
+  transition: border-color 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #B22222;
+  border-color: var(--dorado);
   outline: none;
+  box-shadow: 0 0 5px rgba(200, 169, 126, 0.4);
 }
 
 .invalid-feedback {
-  color: red;
+  color: #ffb3b3;
   font-size: 0.9em;
 }
 
-/* Botón de envío */
+/* ==============================
+   Botón principal
+============================== */
 button.btn-success {
-  background-color: #B22222;
-  color: #FFFFFF;
-  padding: 10px 20px;
+  background-color: var(--dorado);
+  color: var(--vino);
+  padding: 12px 30px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 button.btn-success:hover {
-  background-color: #8B1A1A;
+  background-color: var(--verde-oliva);
+  color: var(--blanco);
 }
 
-/* Multimedia */
-audio, video {
+/* ==============================
+   Multimedia
+============================== */
+video, audio {
   width: 100%;
+  border-radius: 10px;
   margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Utilidades */
-.mt-3 {
-  margin-top: 1rem;
-}
-
-.mt-4 {
-  margin-top: 1.5rem;
+/* ==============================
+   Utilidades
+============================== */
+.text-center {
+  text-align: center;
 }
 
 .my-5 {
