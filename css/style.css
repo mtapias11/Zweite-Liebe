@@ -179,8 +179,55 @@ textarea:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(178, 34, 34, 0.3);
 }
+/* ========================================
+   Estilos personalizados para la tabla 
+=========================================*/
+#tabla h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+}
 
-/* =========================================
+#tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  background-color: #fff; /* fondo blanco */
+  color: #000; /* texto negro */
+}
+
+#tabla th, #tabla td {
+  padding: 14px 18px;
+  text-align: center;
+  border: 1px solid #000; /* bordes negros */
+}
+
+#tabla thead 
+{
+  background-color: #f5f0e6; /* dorado suave */
+  color: #000;
+}
+
+
+#tabla tbody tr:nth-child(even) {
+  background-color: #fdfdfd; /* blanco muy suave */
+}
+
+#tabla tbody tr:hover {
+  background-color: #fffbe6; /* dorado muy suave al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+#tabla td:first-child {
+  font-weight: 600;
+  background-color: #fffaf0; /* dorado pálido para destacar el aspecto */
+  color: #000;
+}
+
+/* ========================================
    Submit Button
 ========================================= */
 button.btn-success {
