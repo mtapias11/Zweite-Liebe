@@ -2,12 +2,12 @@
 // Zweite Liebe - Interactividad con JavaScript
 // ---------------------------------------------
 
-// 💬 1. Mensaje de bienvenida al cargar la página
+// Mensaje de bienvenida al cargar la página
 window.addEventListener("load", function() {
   alert("🌿 Bienvenido/a a Zweite Liebe: la segunda vida de la moda de lujo 🌿");
 });
 
-// 🧮 2. Contador de visitas (operador de incremento y localStorage)
+// Contador de visitas (operador de incremento y localStorage)
 let visitas = localStorage.getItem("visitas");
 if (!visitas) {
   visitas = 0;
@@ -26,7 +26,7 @@ if (visitas === 1) {
   alert(`¡Wow! Ya has visitado esta página ${visitas} veces 😍`);
 }
 
-// 🔧 3. Función para validar un campo adicional del formulario
+// Función para validar un campo adicional del formulario
 function validarMensaje() {
   const mensaje = document.getElementById("mensaje").value.trim();
 
@@ -38,7 +38,7 @@ function validarMensaje() {
   }
 }
 
-// 🧠 4. Interceptar el envío del formulario para aplicar nuestra función
+// Interceptar el envío del formulario para aplicar nuestra función
 const formulario = document.querySelector("form");
 formulario.addEventListener("submit", function(event) {
   if (!validarMensaje()) {
@@ -48,7 +48,7 @@ formulario.addEventListener("submit", function(event) {
   }
 });
 
-// 🔄 5. Pequeña animación con bucles (for y break)
+// Pequeña animación con bucles (for y break)
 function mostrarFrasesInspiradoras() {
   const frases = [
     "La moda sostenible nunca pasa de moda.",
@@ -65,7 +65,7 @@ function mostrarFrasesInspiradoras() {
 
 mostrarFrasesInspiradoras();
 
-// 🌀 6. Ejemplo de while: simulamos una cuenta regresiva
+// Ejemplo de while: simulamos una cuenta regresiva
 let cuenta = 3;
 while (cuenta > 0) {
   console.log(`Preparando página en ${cuenta}...`);
