@@ -1,74 +1,175 @@
 // script.js
-// Zweite Liebe - Interactividad con JavaScript
-// ---------------------------------------------
 
-// Mensaje de bienvenida al cargar la página
-window.addEventListener("load", function() {
-  alert("🌿 Bienvenido/a a Zweite Liebe: la segunda vida de la moda de lujo 🌿");
+// === BIENVENIDA (solo la primera vez) ===
+document.addEventListener("DOMContentLoaded", () => {
+  // Mostrar alerta de bienvenida solo una vez
+  if (!sessionStorage.getItem("bienvenida")) {
+    alert("👗 ¡Bienvenida a Zweite Liebe! La moda con propósito te espera.");
+    sessionStorage.setItem("bienvenida", "true");
+  }
+
+  // Inicializar carrito y mostrar beneficios en consola
+  inicializarCarrito();
+  mostrarBeneficios();
 });
 
-// Contador de visitas (operador de incremento y localStorage)
-let visitas = localStorage.getItem("visitas");
-if (!visitas) {
-  visitas = 0;
+// === VARIABLES DEL CARRITO ===
+let carrito = [];
+let listaCarrito, total, contador, vaciarBtn, verCarritoBtn, cerrarCarritoBtn, carritoDropdown;
+
+// === INICIALIZAR CARRITO ===
+function inicializarCarrito() {
+  // Obtener elementos del DOM
+  listaCarrito = document.getElementById("lista-carrito");
+  total = document.getElementById("total");
+  contador = document.getElementById("contador-carrito");
+  vaciarBtn = document.getElementById("vaciar-carrito");
+  verCarritoBtn = document.getElementById("ver-carrito");
+  cerrarCarritoBtn = document.getElementById("cerrar-carrito");
+  carritoDropdown = document.getElementById("carrito-dropdown");
+
+  // Cargar carrito desde localStorage si existe
+  const carritoGuardado = localStorage.getItem("carrito");
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    actualizarCarrito();
+  }
+
+  // === EVENTOS PRINCIPALES ===
+  if (verCarritoBtn && carritoDropdown) {
+    verCarritoBtn.addEventListener("click", () => {
+      // Mostrar u ocultar el dropdown del carrito
+      carritoDropdown.style.display =
+        carritoDropdown.style.display === "block" ? "none" : "block";
+    });
+  }
+
+  if (cerrarCarritoBtn) {
+    cerrarCarritoBtn.addEventListener("click", () => {
+      // Cerrar el dropdown del carrito
+      carritoDropdown.style.display = "none";
+    });
+  }
+
+  if (vaciarBtn) {
+    vaciarBtn.addEventListener("click", vaciarCarrito);
+  }
+
+  // Asignar eventos a botones de productos para agregar al carrito
+  const botones = document.querySelectorAll(".agregar-carrito");
+  botones.forEach((boton) => {
+    boton.addEventListener("click", agregarProducto);
+  });
 }
-visitas++; // operador de incremento
-localStorage.setItem("visitas", visitas);
 
-console.log("Número de visitas a la página:", visitas);
+// === AGREGAR PRODUCTO ===
+function agregarProducto(e) {
+  const nombre = e.target.dataset.nombre;
+  const precio = parseFloat(e.target.dataset.precio);
 
-// Mostrar mensaje con operadores de comparación
-if (visitas === 1) {
-  alert("¡Es tu primera visita! Gracias por conocernos 💚");
-} else if (visitas < 5) {
-  alert(`Gracias por visitarnos de nuevo (${visitas} veces). ¡Nos alegra verte! 👗`);
-} else {
-  alert(`¡Wow! Ya has visitado esta página ${visitas} veces 😍`);
+  if (!nombre || isNaN(precio)) return; // Verificar que el nombre y precio sean válidos
+
+  // Agregar producto al carrito
+  carrito.push({ nombre, precio });
+  guardarCarrito(); // Guardar carrito en localStorage
+  actualizarCarrito(); // Actualizar la vista del carrito
+
+  mostrarMensaje(`${nombre} fue agregado al carrito 🛍️`); // Mostrar mensaje flotante
 }
 
-// Función para validar un campo adicional del formulario
-function validarMensaje() {
-  const mensaje = document.getElementById("mensaje").value.trim();
+// === ACTUALIZAR CARRITO ===
+function actualizarCarrito() {
+  if (!listaCarrito || !total || !contador) return;
 
-  if (mensaje.length < 10) {
-    alert("📝 Tu mensaje es muy corto. Cuéntanos un poco más, por favor.");
-    return false; // corta el envío
-  } else {
-    return true;
+  // Limpiar el contenido previo del carrito
+  listaCarrito.innerHTML = "";
+  let suma = 0;
+
+  // Agregar productos al carrito y calcular total
+  carrito.forEach((item, i) => {
+    const li = document.createElement("li");
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+    li.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+
+    // Crear botón para eliminar producto
+    const eliminar = document.createElement("button");
+    eliminar.textContent = "×";
+    eliminar.className = "btn btn-sm btn-outline-danger ms-2";
+    eliminar.onclick = () => {
+      carrito.splice(i, 1); // Eliminar producto del carrito
+      guardarCarrito(); // Guardar cambios en localStorage
+      actualizarCarrito(); // Actualizar vista del carrito
+    };
+
+    li.appendChild(eliminar); // Agregar el botón eliminar al elemento de lista
+    listaCarrito.appendChild(li); // Agregar item al carrito
+    suma += item.precio; // Sumar precio del producto
+  });
+
+  // Actualizar total y contador de productos
+  total.textContent = `Total: $${suma.toFixed(2)}`;
+  contador.textContent = carrito.length;
+}
+
+// === GUARDAR EN LOCALSTORAGE ===
+function guardarCarrito() {
+  // Guardar el carrito en localStorage
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+// === VACIAR CARRITO ===
+function vaciarCarrito() {
+  if (carrito.length === 0) {
+    mostrarMensaje("👜 Tu carrito ya está vacío.");
+    return;
+  }
+
+  if (confirm("¿Deseas vaciar el carrito?")) {
+    carrito = []; // Limpiar carrito
+    guardarCarrito(); // Guardar cambios en localStorage
+    actualizarCarrito(); // Actualizar vista del carrito
+    mostrarMensaje("🧺 Carrito vaciado correctamente.");
   }
 }
 
-// Interceptar el envío del formulario para aplicar nuestra función
-const formulario = document.querySelector("form");
-formulario.addEventListener("submit", function(event) {
-  if (!validarMensaje()) {
-    event.preventDefault(); // detiene el envío si no pasa la validación
-  } else {
-    alert("💌 ¡Gracias por contactarnos! Pronto te responderemos.");
-  }
-});
+// === FUNCIÓN UTILITARIA: MENSAJE FLOTANTE ===
+function mostrarMensaje(texto) {
+  const mensaje = document.createElement("div");
+  mensaje.textContent = texto;
+  mensaje.style.position = "fixed";
+  mensaje.style.bottom = "20px";
+  mensaje.style.right = "20px";
+  mensaje.style.background = "#B76E79";
+  mensaje.style.color = "white";
+  mensaje.style.padding = "10px 20px";
+  mensaje.style.borderRadius = "6px";
+  mensaje.style.boxShadow = "0 3px 10px rgba(0,0,0,0.2)";
+  mensaje.style.zIndex = "2000";
+  mensaje.style.transition = "opacity 0.5s ease";
+  document.body.appendChild(mensaje);
 
-// Pequeña animación con bucles (for y break)
-function mostrarFrasesInspiradoras() {
-  const frases = [
-    "La moda sostenible nunca pasa de moda.",
-    "Cada prenda tiene una segunda oportunidad.",
-    "Compra con conciencia, viste con propósito."
+  setTimeout(() => {
+    mensaje.style.opacity = "0";
+    setTimeout(() => mensaje.remove(), 500); // Eliminar mensaje después de 2 segundos
+  }, 2000);
+}
+
+// === FUNCIÓN EXTRA: CÁLCULO DE DESCUENTO ===
+function calcularDescuento(precio, porcentaje) {
+  if (isNaN(precio) || isNaN(porcentaje)) return 0;
+  return precio - (precio * porcentaje) / 100;
+}
+
+// === FUNCIÓN EXTRA: BENEFICIOS CONSOLE ===
+function mostrarBeneficios() {
+  const beneficios = [
+    "Reduce el impacto ambiental 🌍",
+    "Apoya la moda circular ♻️",
+    "Fomenta la reutilización 👗",
+    "Promueve la sostenibilidad 💚",
   ];
 
-  // Mostramos cada frase con un bucle for
-  for (let i = 0; i < frases.length; i++) {
-    console.log(frases[i]);
-    if (i === 2) break; // usamos break para detener el bucle
+  for (let i = 0; i < beneficios.length; i++) {
+    console.log(beneficios[i]);
   }
 }
-
-mostrarFrasesInspiradoras();
-
-// Ejemplo de while: simulamos una cuenta regresiva
-let cuenta = 3;
-while (cuenta > 0) {
-  console.log(`Preparando página en ${cuenta}...`);
-  cuenta--;
-}
-console.log("Página lista para explorar 💫");

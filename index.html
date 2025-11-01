@@ -14,6 +14,7 @@
 </head>
 <body>
 
+  
   <header class="text-center p-4 bg-light">
     <h1>Zweite Liebe</h1>
     <p>Una segunda vida para la moda de lujo.</p>
@@ -23,6 +24,25 @@
       <a href="#video" class="mx-2">Video</a>
     </nav>
   </header>
+
+  <!-- Carrito arriba a la derecha -->
+  <div id="carrito-container" class="position-absolute top-0 end-0 m-3">
+    <button id="ver-carrito" class="btn btn-success position-relative">
+      🛒 Carrito
+      <span id="contador-carrito" class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+    </button>
+
+    <!-- Ventana del carrito -->
+    <div id="carrito-dropdown" class="card shadow-sm p-3 mt-2 text-start" style="display: none; width: 280px;">
+      <h5>Tu carrito</h5>
+      <ul id="lista-carrito" class="list-group mb-2" style="max-height: 200px; overflow-y: auto;"></ul>
+      <p id="total" class="fw-bold">Total: $0</p>
+      <div class="d-flex justify-content-between">
+        <button id="vaciar-carrito" class="btn btn-outline-danger btn-sm">Vaciar</button>
+        <button id="cerrar-carrito" class="btn btn-outline-secondary btn-sm">Cerrar</button>
+      </div>
+    </div>
+  </div>
 
   <main class="container my-5">
 
@@ -37,8 +57,33 @@
     <!-- Sección Marcas -->
     <section id="marcas" class="my-5 text-center">
       <h2>Segunda mano con autenticación</h2>
-      <img src="images/marcas.png" alt="Marcas de lujo" class="img-fluid my-3">
       <p>Chanel, Dior, Gucci, Louis Vuitton, Prada, entre otras. Somos una plataforma de lujo pre-loved.</p>
+    </section>
+
+    <!-- Sección Carrusel -->
+    <section id="galeria" class="my-5 text-center">
+      <h2>Inspiración Circular</h2>
+      <div id="carouselZweite" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/marcas.png" class="d-block w-100" alt="Moda sostenible 1">
+          </div>
+          <div class="carousel-item">
+            <img src="images/Atempora.jpg" class="d-block w-100" alt="Moda sostenible 2">
+          </div>
+          <div class="carousel-item">
+            <img src="images/Collage.png" class="d-block w-100" alt="Moda sostenible 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselZweite" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselZweite" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
     </section>
 
     <!-- Sección Por qué elegir -->
@@ -48,7 +93,7 @@
         En Zweite Liebe creemos que cada vestido tiene una historia que merece ser contada una vez más. Rescatamos piezas de alta costura y les damos una segunda vida, fusionando elegancia atemporal con conciencia ambiental.
       </p>
       <p>
-        <a href="https://www.pactomundial.org/noticia/moda-sostenible/" target="_blank">
+        <a href="https://www.pactomundial.org/noticia/moda-sostenible/" target="_blank" rel="noopener noreferrer">
           Visita Pacto Mundial para saber más sobre moda sostenible.
         </a>
       </p>
@@ -64,50 +109,57 @@
     </section>
 
     <!-- Sección Tabla Comparativa -->
- <section id="tabla" class="my-5">
-  <h2>Moda Sostenible vs Fast Fashion</h2>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Aspecto</th>
-        <th>Moda Sostenible</th>
-        <th>Fast Fashion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Impacto ambiental</td>
-        <td>Bajo</td>
-        <td>Alto</td>
-      </tr>
-      <tr>
-        <td>Calidad de prendas</td>
-        <td>Alta</td>
-        <td>Baja</td>
-      </tr>
-      <tr>
-        <td>Ética laboral</td>
-        <td>Responsable</td>
-        <td>Frecuentemente precaria</td>
-      </tr>
-      <tr>
-        <td>Precio</td>
-        <td>Más elevado</td>
-        <td>Muy bajo</td>
-      </tr>
-      <tr>
-        <td>Durabilidad</td>
-        <td>Larga</td>
-        <td>Corta</td>
-      </tr>
-      <tr>
-        <td>Innovación</td>
-        <td>Circular, artesanal</td>
-        <td>Masiva, industrial</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+    <section id="tabla" class="my-5">
+      <h2>Moda Sostenible vs Fast Fashion</h2>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Moda Sostenible</th>
+            <th>Fast Fashion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Impacto ambiental</td><td>Bajo</td><td>Alto</td></tr>
+          <tr><td>Calidad de prendas</td><td>Alta</td><td>Baja</td></tr>
+          <tr><td>Ética laboral</td><td>Responsable</td><td>Frecuentemente precaria</td></tr>
+          <tr><td>Precio</td><td>Más elevado</td><td>Muy bajo</td></tr>
+          <tr><td>Durabilidad</td><td>Larga</td><td>Corta</td></tr>
+          <tr><td>Innovación</td><td>Circular, artesanal</td><td>Masiva, industrial</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sección Tienda -->
+    <section id="tienda" class="my-5 text-center">
+      <h2>Explora nuestras piezas únicas</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="images/Bolso-chanel.png" class="card-img-top" alt="Bolso vintage Chanel">
+            <h5 class="mt-3">Bolso Vintage Chanel</h5>
+            <p>$180</p>
+            <button class="btn btn-outline-success agregar-carrito" data-nombre="Bolso Vintage Chanel" data-precio="180">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="images/Bolso-Valentino.png" class="card-img-top" alt="Bolso clásico Valentino">
+            <h5 class="mt-3">Bolso clásico Valentino</h5>
+            <p>$250</p>
+            <button class="btn btn-outline-success agregar-carrito" data-nombre="Bolso clásico Valentino" data-precio="250">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="images/Zapatos chloe.png" class="card-img-top" alt="Zapatos Gucci">
+            <h5 class="mt-3">Zapatos Gucci</h5>
+            <p>$220</p>
+            <button class="btn btn-outline-success agregar-carrito" data-nombre="Zapatos Gucci" data-precio="220">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Sección Formulario -->
     <section id="formulario" class="my-5">
@@ -147,6 +199,9 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS personalizado -->
+  <script src="script.js"></script>
 
   <!-- Validación de formulario -->
   <script>

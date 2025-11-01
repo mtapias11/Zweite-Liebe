@@ -1,21 +1,23 @@
 /* =========================================
-   Editorial Typography & Base Styles
+   Variables de color y tipografía
 ========================================= */
+:root {
+  --color-primary: #1C1C1C; /* Negro carbón */
+  --color-background: #ecd9d9; /* Blanco hueso */
+  --color-accent: #B76E79; /* Oro rosado */
+  --color-soft: #EAE4DC; /* Beige suave */
+  --color-muted: #A8A8A8; /* Gris piedra */
+  --color-natural: #B76E79; /* Verde salvia */
+}
+
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+
 @font-face {
   font-family: 'TAN Harmoni';
   src: url('fonts/TAN-Harmoni.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-
-body {
-  font-family: 'Georgia', serif;
-  background-color: #db0000c5;
-  color: #1a1a1a;
-  line-height: 1.8;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
 }
 
 /* =========================================
@@ -33,11 +35,20 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+header h1 {
+  font-family: 'TAN Harmoni', serif;
+  font-style: italic;
+  font-size: 2.6rem;
+  color: #990303;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
 /* =========================================
    Minimal Navigation
 ========================================= */
 nav {
   margin-top: 15px;
+  text-align: center;
 }
 
 nav a {
@@ -68,34 +79,23 @@ nav a:hover {
 /* =========================================
    Section Titles
 ========================================= */
-h1 {
-  font-family: 'TAN Harmoni', serif;
-  font-style: italic;
-  font-size: 2.6rem;
-  text-align: center;
-  margin-bottom: 35px;
-  color: #000000;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-}
-
 h2, h3 {
   font-family: 'Georgia', serif;
   font-style: italic;
   color: #000000;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  margin-bottom: 25px;
 }
 
-/* Medium section titles */
 h2 {
   font-size: 1.9rem;
   position: relative;
+  margin-bottom: 35px;
 }
 
-/* Small subtitles */
 h3 {
   font-size: 1.4rem;
   margin-top: 25px;
+  font-weight: 600;
 }
 
 /* Optional underline accent for h2 */
@@ -115,6 +115,8 @@ h2::after {
 p {
   margin-bottom: 20px;
   color: #333333;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
 }
 
 /* =========================================
@@ -179,6 +181,7 @@ textarea:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(178, 34, 34, 0.3);
 }
+
 /* ========================================
    Estilos personalizados para la tabla 
 =========================================*/
@@ -205,12 +208,10 @@ textarea:focus {
   border: 1px solid #000; /* bordes negros */
 }
 
-#tabla thead 
-{
+#tabla thead {
   background-color: #f5f0e6; /* dorado suave */
   color: #000;
 }
-
 
 #tabla tbody tr:nth-child(even) {
   background-color: #fdfdfd; /* blanco muy suave */
@@ -284,5 +285,10 @@ footer {
 
   h2 {
     font-size: 1.6rem;
+  }
+
+  button.btn-success {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
