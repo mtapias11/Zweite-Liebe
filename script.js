@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   try {
     if (!sessionStorage.getItem("bienvenida")) {
       if (typeof window !== "undefined" && typeof window.alert === "function") {
-        alert("👗 ¡Bienvenida a Zweite Liebe! La moda con propósito te espera.");
+        alert("👗 ¡Wilkommen a Zweite Liebe! La moda con propósito te espera.");
       }
       sessionStorage.setItem("bienvenida", "true");
     }
